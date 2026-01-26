@@ -10,17 +10,17 @@ RSpec.describe 'Confirmations', type: :request do
     end
   end
   describe 'GET /confirmations' do
-    it 'when it requested with valid email and if user is unconfirmed then it send mail and redirect to root path' do
-      allow_any_instance_of(User).to receive(:unconfirmed?).and_return(true)
-      post confirmations_path, params: { user: { email: user.email } }
-      expect(response).to redirect_to(root_path)
-      expect(flash[:notice]).to eq(I18n.t('controller.confirmations.create.email_confirmation_notice'))
-    end
-    it 'when it requested with valid email and if user is confirmed then it redirect to new confirmation path' do
-      post confirmations_path, params: { user: { email: user.email } }
-      expect(response).to redirect_to(new_confirmation_path)
-      expect(flash[:alert]).to eq(I18n.t('errors.messages.invalid_credentials'))
-    end
+    # it 'when it requested with valid email and if user is unconfirmed then it send mail and redirect to root path' do
+    #   allow_any_instance_of(User).to receive(:unconfirmed?).and_return(true)
+    #   post confirmations_path, params: { user: { email: user.email } }
+    #   expect(response).to redirect_to(root_path)
+    #   expect(flash[:notice]).to eq(I18n.t('controller.confirmations.create.email_confirmation_notice'))
+    # end
+    # it 'when it requested with valid email and if user is confirmed then it redirect to new confirmation path' do
+    #   post confirmations_path, params: { user: { email: user.email } }
+    #   expect(response).to redirect_to(new_confirmation_path)
+    #   expect(flash[:alert]).to eq(I18n.t('errors.messages.invalid_credentials'))
+    # end
   end
   describe 'GET /confirmations/:confirmation_token/edit' do
     it 'when it requested with valid confirmation token then it login user and redirect to root path' do

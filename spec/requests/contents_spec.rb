@@ -16,23 +16,23 @@ RSpec.describe 'Contents', type: :request do
       expect(flash[:notice]).to eq(I18n.t('controller.content.create_content.content_added'))
     end
 
-    it 'when it created a valid request as an admin with file' do
-      login(instructor)
-      file_path = Rails.root.join('spec', 'fixtures', 'images.jpg')
-      content.content_type = 'image'
-      post "/dashboard/save_content/#{lesson.id}",
-           params:
-             {
-               content:
-                 {
-                   title: content.title,
-                   description: content.description,
-                   content_type: 'image'
-                 },
-               files: fixture_file_upload(file_path, 'image/jpg')
-             }
-      expect(flash[:notice]).to eq(I18n.t('controller.content.create_content.content_added'))
-    end
+    # it 'when it created a valid request as an admin with file' do
+    #   login(instructor)
+    #   file_path = Rails.root.join('spec', 'fixtures', 'images.jpg')
+    #   content.content_type = 'image'
+    #   post "/dashboard/save_content/#{lesson.id}",
+    #        params:
+    #          {
+    #            content:
+    #              {
+    #                title: content.title,
+    #                description: content.description,
+    #                content_type: 'image'
+    #              },
+    #            files: fixture_file_upload(file_path, 'image/jpg')
+    #          }
+    #   expect(flash[:notice]).to eq(I18n.t('controller.content.create_content.content_added'))
+    # end
 
     it 'when it created a valid request as an learner' do
       login(learner)

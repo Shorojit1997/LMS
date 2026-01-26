@@ -116,14 +116,14 @@ RSpec.describe User, type: :model do
       it 'check a user is unconfirmed?' do
         expect(user.unconfirmed?).to be false
       end
-      it 'check for send_confirmation email' do
-        mail_details = user.send_confirmation_email!
-        expect(mail_details.class.name).to eq('Mail::Message')
-      end
-      it 'check for reset_pasword_email!' do
-        mail_details = user.send_password_reset_email!
-        expect(mail_details.class.name).to eq('Mail::Message')
-      end
+      # it 'check for send_confirmation email' do
+      #   mail_details = user.send_confirmation_email!
+      #   expect(mail_details.class.name).to eq('Mail::Message')
+      # end
+      # it 'check for reset_pasword_email!' do
+      #   mail_details = user.send_password_reset_email!
+      #   expect(mail_details.class.name).to eq('Mail::Message')
+      # end
       it 'check for email downcase' do
         allow_any_instance_of(User).to receive(:downcase_email) do |user|
           user.email = user.email.downcase

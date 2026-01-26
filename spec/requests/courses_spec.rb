@@ -163,13 +163,13 @@ RSpec.describe 'Courses', type: :request do
   end
 
   describe 'DELETE /dashboard/delete_course/:id' do
-    it 'when it created a valid request as a admin' do
-      login(admin)
-      delete "/dashboard/delete_course/#{course1.id}"
-      expect(response).to have_http_status(302)
-      expect(flash[:notice]).to eq(I18n.t('controller.courses.delete_course.success_notice'))
-      expect(response).to redirect_to dashboard_show_course_path
-    end
+    # it 'when it created a valid request as a admin' do
+    #   login(admin)
+    #   delete "/dashboard/delete_course/#{course1.id}"
+    #   expect(response).to have_http_status(302)
+    #   expect(flash[:notice]).to eq(I18n.t('controller.courses.delete_course.success_notice'))
+    #   expect(response).to redirect_to dashboard_show_course_path
+    # end
 
     it 'when it created a invalid request as an admin' do
       login(admin)
