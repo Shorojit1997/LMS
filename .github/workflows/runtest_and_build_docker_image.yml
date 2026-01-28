@@ -2,7 +2,7 @@ name: Run Tests and Build Docker Image
 
 on:
   push:
-    branches: [ master ]
+    - "**"
 
 jobs:
   test-and-build:
