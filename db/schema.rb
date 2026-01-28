@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_050659) do
   create_table "contents", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
-    t.bigint "content_type", default: 0
+    t.integer "content_type", default: 0
     t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
