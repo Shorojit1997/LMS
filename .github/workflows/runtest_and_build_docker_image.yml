@@ -24,6 +24,10 @@ jobs:
           --health-timeout=5s
           --health-retries=5
 
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
