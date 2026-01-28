@@ -36,11 +36,11 @@ jobs:
           bundler-cache: true
 
       # (Optional) Node if you need assets
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      #     cache: npm
 
       # ✅ Prepare database
       - name: Setup database
