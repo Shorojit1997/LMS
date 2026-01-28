@@ -1,0 +1,11 @@
+name: "Check Ruby Version"
+description: "Fails CI if Ruby version does not match"
+
+inputs:
+  required-version:
+    description: "Required Ruby version (e.g. 3.2.2)"
+    required: true
+
+runs:
+  using: "node25"
+  main: "index.js"

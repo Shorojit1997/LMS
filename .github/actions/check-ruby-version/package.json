@@ -1,0 +1,8 @@
+{
+  "name": "check-ruby-version",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  }
+}
