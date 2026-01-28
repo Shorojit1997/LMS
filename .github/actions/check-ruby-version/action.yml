@@ -7,5 +7,5 @@ inputs:
     required: true
 
 runs:
-  using: "node25"
+  using: "node24"
   main: "index.js"
